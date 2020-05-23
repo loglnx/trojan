@@ -181,7 +181,6 @@ open_port() {
 
 get_ip() {
   local_ip=$(curl -s https://api.ip.sb/ip)
-  [[ -z ${local_ip} ]] && ${local_ip}=$(curl -s https://ip.seeip.org)
   [[ -z ${local_ip} ]] && ${local_ip}=$(curl -s https://ifconfig.co/ip)
   [[ -z ${local_ip} ]] && ${local_ip}=$(curl -s icanhazip.com)
   [[ -z ${local_ip} ]] && echo -e "${Error}获取不到你vps的ip地址" && exit
